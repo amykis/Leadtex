@@ -55,4 +55,5 @@ while (rows < len_values) {
     }
     rows++;
 }
+
 setContactVariable("count_button", count_button);
