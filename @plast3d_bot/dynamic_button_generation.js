@@ -49,8 +49,8 @@ while (rows < len_values) {
     }
     // Формируем кнопки с наименованием
     if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view != new_view){
-        compatibility = new_compatibility;
-        setContactVariable("button" + count_button, compatibility);
+        view = new_view;
+        setContactVariable("button" + count_button, view);
         count_button++;
     }
     rows++;
