@@ -41,14 +41,14 @@ while (rows < len_values) {
 
     // Инициализация флага, проверка наличия данных по количеству
     var flag = "";
-    if (new_quantity_availability === null || new_quantity_availability === undefined || new_quantity_availability === ""){
+    if (new_quantity_availability === null || new_quantity_availability === undefined || new_quantity_availability === "") {
         flag = flag + '0';
     }
-    if (new_quantity_early_reservation === null || new_quantity_early_reservation === undefined || new_quantity_early_reservation === ""){
+    if (new_quantity_early_reservation === null || new_quantity_early_reservation === undefined || new_quantity_early_reservation === "") {
         flag = flag + '0';
     }
     // Формируем кнопки с наименованием
-    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view == new_view && texture_size != new_texture_size){
+    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view == new_view && texture_size != new_texture_size) {
         texture_size = new_texture_size;
         setContactVariable("button" + count_button, texture_size);
         count_button++;
