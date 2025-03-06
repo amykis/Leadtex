@@ -1,5 +1,5 @@
 // Получаем выбор пользователя
-var brand = getContactVariable("brand");
+var accessories_and_consumables = getContactVariable("accessories_and_consumables");
 
 //  Получаем информацию из таблицы в JSON формате и записываем в переменную json_data
 var json_data = response.data;
@@ -9,7 +9,6 @@ setContactVariable("len_values", len_values);
 
 // Инициализация переменных для последующего сравнения
 var id = "";
-var accessories_and_consumables = "";
 var product_name = "";
 var compatibility = "";
 var view = "";
@@ -49,7 +48,7 @@ while (rows < len_values) {
         flag = flag + '0';
     }
     // Формируем кнопки с наименованием
-    if (flag != '00' && product_name != new_product_name && new_accessories_and_consumables == brand){
+    if (flag != '00' && product_name != new_product_name && accessories_and_consumables == new_accessories_and_consumables){
         product_name = new_product_name;
         setContactVariable("button" + count_button, product_name);
         count_button++;
