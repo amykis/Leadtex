@@ -2,6 +2,7 @@
 var accessories_and_consumables = getContactVariable("accessories_and_consumables");
 var product_name = getContactVariable("product_name");
 var compatibility = getContactVariable("compatibility");
+var view = getContactVariable("view");
 
 //  Получаем информацию из таблицы в JSON формате и записываем в переменную json_data
 var json_data = response.data;
@@ -11,7 +12,6 @@ setContactVariable("len_values", len_values);
 
 // Инициализация переменных для последующего сравнения
 var id = "";
-var view = "";
 var texture_size = "";
 var quantity_availability = "";
 var quantity_early_reservation = "";
@@ -48,9 +48,9 @@ while (rows < len_values) {
         flag = flag + '0';
     }
     // Формируем кнопки с наименованием
-    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view != new_view){
-        view = new_view;
-        setContactVariable("button" + count_button, view);
+    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view == new_view && texture_size != new_texture_size){
+        texture_size = new_texture_size;
+        setContactVariable("button" + count_button, texture_size);
         count_button++;
     }
     rows++;
