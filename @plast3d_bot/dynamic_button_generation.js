@@ -48,12 +48,11 @@ while (rows < len_values) {
         flag = flag + '0';
     }
     // Формируем кнопки с наименованием
-    if (flag != '00' && product_name != new_product_name && accessories_and_consumables == new_accessories_and_consumables){
+    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name != new_product_name){
         product_name = new_product_name;
         setContactVariable("button" + count_button, product_name);
         count_button++;
     }
     rows++;
 }
-
 setContactVariable("count_button", count_button);
