@@ -36,5 +36,17 @@ if (quantity_early_reservation === null || quantity_early_reservation === undefi
     setContactVariable("text_quantity_early_reservation", "Некорректное значение");
 }
 
+if (price_preorder === null || price_preorder === undefined || price_preorder === "") {
+    setContactVariable("text_quantity_early_reservation", null);
+} else if (typeof price_preorder === "string" && price_preorder.trim() === "не выпускается") {
+    setContactVariable("text_quantity_early_reservation", null);
+} else if (typeof price_preorder === "number" || !isNaN(price_preorder)) {
+    setContactVariable("text_price_preorder", "<b>Предзаказ:</b> " +
+        price_preorder  + " р.%0A%0A");
+    setContactVariable("button_price_preorder", "Предзаказ")
+} else {
+    setContactVariable("text_price_preorder", "Некорректное значение");
+}
+
 var name_product = accessories_and_consumables + " " + product_name + " " + compatibility + " " + view + " " + texture_size;
 setContactVariable("name_product", name_product);
