@@ -39,16 +39,8 @@ while (rows < len_values) {
     var new_price_early_reservation = json_data.values[rows][9];
     var new_price_preorder = json_data.values[rows][10];
 
-    // Инициализация флага, проверка наличия данных по количеству
-    var flag = "";
-    if (new_quantity_availability === null || new_quantity_availability === undefined || new_quantity_availability === "") {
-        flag = flag + '0';
-    }
-    if (new_quantity_early_reservation === null || new_quantity_early_reservation === undefined || new_quantity_early_reservation === "") {
-        flag = flag + '0';
-    }
-    // Формируем кнопки с наименованием
-    if (flag != '00' && accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view == new_view && texture_size == new_texture_size) {
+    // Отправляем полученные даннные в переменные
+    if (accessories_and_consumables == new_accessories_and_consumables && product_name == new_product_name && compatibility == new_compatibility && view == new_view && texture_size == new_texture_size) {
         setContactVariable("id", new_id);
         setContactVariable("quantity_availability", new_quantity_availability);
         setContactVariable("quantity_early_reservation", new_quantity_early_reservation);
